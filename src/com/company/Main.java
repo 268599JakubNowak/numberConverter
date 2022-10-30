@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Converter converter = new Converter();
         //What number do you want to convert?
-        converter.chooseNumber(10.34);
+        converter.chooseNumber(10.5);
        //What unit do you want to choose?
         converter.chooseUnit("kg");
       //To which unit you want to convert?
