@@ -6,7 +6,7 @@ public class Main {
         // MASS AND LENGTH CONVERTER
         Converter converter = new Converter();
         //What number do you want to convert?
-        System.out.println("What number do you want to convert?");
+        System.out.println("What number do you want to convert? Use a ',' as the decimal separator.");
         converter.chooseNumber();
        //What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
         System.out.println("What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");

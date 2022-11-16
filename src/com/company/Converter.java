@@ -134,11 +134,23 @@ public class Converter {
             number = number;
             System.out.println("You choose the same unit.");
         }
+        //SAFEGUARD
         else {
             number = number;
             System.out.println("ERROR");
+            System.out.println("Something went wrong, try again.");
+            System.out.println("What number do you want to convert? Use a ',' as the decimal separator.");
+            chooseNumber();
+            //What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
+            System.out.println("What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");
+            chooseUnit1();
+            //To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
+            System.out.println("To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");
+            convertNumber();
+            System.out.println(getNumber() + " " + getUnit2());
+            System.out.println("You converted " + getUnit1() + " to " + getUnit2());
         }
          return number;
     }
 }
-// kropka, spytac jeszcze raz gdy string
+// odpowiada kilka razy po ponownym zapytaniu
