@@ -3,10 +3,11 @@ package com.company;
 import java.util.Scanner;
 
 public class Converter {
-    String unit1;
-    String unit2;
-    double number;
+    Scanner scanner = new Scanner(System.in);
 
+    private String unit1; //= scanner.next();
+    private String unit2; //= scanner.next();
+    private double number; //= scanner.nextInt();
 
     public String getUnit1() {
         return unit1;
@@ -20,18 +21,18 @@ public class Converter {
         return number;
     }
 
-    public double chooseNumber(double number) {
-        this.number = number;
+    public double chooseNumber() {
+        number = scanner.nextDouble();
         return number;
     }
 
-    public String chooseUnit (String unit1) {
-        this.unit1 = unit1;
+    public String chooseUnit1 () {
+        unit1 = scanner.next();
         return unit1;
     }
 
-    public double convertNumber (String unit2) {
-        this.unit2 = unit2;
+    public double convertNumber () {
+        unit2 = scanner.next();
         if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("kg")) {
             number = number * 1000;
         }
@@ -49,6 +50,24 @@ public class Converter {
         }
         else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("g")) {
             number = number * 1000;
+        }
+        else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("tons")) {
+            number = number * 1000000000;
+        }
+        else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("tons")) {
+            number = number * 1000000;
+        }
+        else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("tons")) {
+            number = number * 1000;
+        }
+        else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("mg")) {
+            number = number / 1000000000;
+        }
+        else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("g")) {
+            number = number / 1000000;
+        }
+        else if (unit2.equalsIgnoreCase("tons ") && unit1.equalsIgnoreCase("kg")) {
+            number = number / 1000;
         }
         else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("m")) {
             number = number / 1000;
@@ -122,3 +141,4 @@ public class Converter {
          return number;
     }
 }
+// kropka, spytac jeszcze raz gdy string
