@@ -26,107 +26,76 @@ public class Converter {
         return number;
     }
 
-    public String chooseUnit1 () {
+    public String chooseUnit1() {
         unit1 = scanner.next();
         return unit1;
     }
 
-    public double convertNumber () {
+    public double convertNumber() {
         unit2 = scanner.next();
         if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("kg")) {
             number = number * 1000;
-        }
-        else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("mg")) {
+        } else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("mg")) {
             number = number / 1000;
-        }
-        else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("g")) {
+        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("g")) {
             number = number / 1000;
-        }
-        else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("mg")) {
+        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("mg")) {
             number = number * 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("kg")) {
+        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("kg")) {
             number = number * 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("g")) {
+        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("g")) {
             number = number * 1000;
-        }
-        else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("tons")) {
+        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("tons")) {
             number = number * 1000000000;
-        }
-        else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("tons")) {
+        } else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("tons")) {
             number = number * 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("tons")) {
+        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("tons")) {
             number = number * 1000;
-        }
-        else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("mg")) {
+        } else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("mg")) {
             number = number / 1000000000;
-        }
-        else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("g")) {
+        } else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("g")) {
             number = number / 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("tons ") && unit1.equalsIgnoreCase("kg")) {
+        } else if (unit2.equalsIgnoreCase("tons ") && unit1.equalsIgnoreCase("kg")) {
             number = number / 1000;
-        }
-        else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("m")) {
+        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("m")) {
             number = number / 1000;
-        }
-        else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("cm")) {
+        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("cm")) {
             number = number / 100000;
-        }
-        else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("mm")) {
+        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("mm")) {
             number = number / 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("mm")) {
+        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("mm")) {
             number = number / 1000;
-        }
-        else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("cm")) {
+        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("cm")) {
             number = number / 100;
-        }
-        else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("km")) {
+        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("km")) {
             number = number * 1000;
-        }
-        else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("mm")) {
+        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("mm")) {
             number = number / 10;
-        }
-        else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("m")) {
+        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("m")) {
             number = number * 100;
-        }
-        else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("km")) {
+        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("km")) {
             number = number * 100000;
-        }
-        else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("cm")) {
+        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("cm")) {
             number = number * 10;
-        }
-        else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("m")) {
+        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("m")) {
             number = number * 1000;
-        }
-        else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("km")) {
+        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("km")) {
             number = number * 1000000;
-        }
-        else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("dm")) {
+        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("dm")) {
             number = number * 100;
-        }
-        else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("dm")) {
+        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("dm")) {
             number = number * 10;
-        }
-        else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("dm")) {
+        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("dm")) {
             number = number / 10;
-        }
-        else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("dm")) {
+        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("dm")) {
             number = number / 10000;
-        }
-        else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("mm")) {
+        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("mm")) {
             number = number / 100;
-        }
-        else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("cm")) {
+        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("cm")) {
             number = number / 10;
-        }
-        else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("m")) {
+        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("m")) {
             number = number * 10;
-        }
-        else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("km")) {
+        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("km")) {
             number = number * 10000;
         }
         //SAFEGUARD
@@ -147,10 +116,11 @@ public class Converter {
             //To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
             System.out.println("To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");
             convertNumber();
-            System.out.println(getNumber() + " " + getUnit2());
-            System.out.println("You converted " + getUnit1() + " to " + getUnit2());
+            if (number != number) {
+                System.out.println(getNumber() + " " + getUnit2());
+                System.out.println("You converted " + getUnit1() + " to " + getUnit2());
+            }
         }
-         return number;
+        return number;
     }
 }
-// odpowiada kilka razy po ponownym zapytaniu
