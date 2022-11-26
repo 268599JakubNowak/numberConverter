@@ -1,13 +1,42 @@
 package com.company;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Converter {
+
     Scanner scanner = new Scanner(System.in);
 
-    private String unit1; //= scanner.next();
-    private String unit2; //= scanner.next();
-    private double number; //= scanner.nextInt();
+    private String unit1;
+    private String unit2;
+    private double number;
+    private double specialFactor;
+    private Map<String, Double> conversionMap;
+
+    public Converter() {
+        conversionMap = new HashMap<>();
+        addConversion("g", "kg", 0.001);
+        addConversion("g", "dg", 0.1);
+        addConversion("g", "tons", 0.000001);
+        addConversion("g", "mg", 10.0);
+        addConversion("kg", "g", 1000.0);
+        addConversion("kg", "mg", 1000000.0);
+        addConversion("kg", "dg", 100.0);
+        addConversion("kg", "tons", 0.001);
+        addConversion("dg", "g", 10.0);
+        addConversion("dg", "mg", 100.0);
+        addConversion("dg", "kg", 0.01);
+        addConversion("dg", "tons", 0.00001);
+        addConversion("mg", "tons", 0.0000001);
+        addConversion("mg", "kg", 0.0001);
+        addConversion("mg", "g", 0.1);
+        addConversion("mg", "dg", 0.01);
+        addConversion("dg", "mg", 100.0);
+        addConversion("dg", "g", 10.0);
+        addConversion("dg", "kg", 0.01);
+        addConversion("dg", "tons", 0.00001);
+    }
 
     public String getUnit1() {
         return unit1;
@@ -30,97 +59,44 @@ public class Converter {
         unit1 = scanner.next();
         return unit1;
     }
+    public void addConversion(String unit1, String unit2, Double factor) {
+        conversionMap.put(unit1 + "-" + unit2, factor);
 
-    public double convertNumber() {
-        unit2 = scanner.next();
-        if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("kg")) {
-            number = number * 1000;
-        } else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("mg")) {
-            number = number / 1000;
-        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("g")) {
-            number = number / 1000;
-        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("mg")) {
-            number = number * 1000000;
-        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("kg")) {
-            number = number * 1000000;
-        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("g")) {
-            number = number * 1000;
-        } else if (unit2.equalsIgnoreCase("mg") && unit1.equalsIgnoreCase("tons")) {
-            number = number * 1000000000;
-        } else if (unit2.equalsIgnoreCase("g") && unit1.equalsIgnoreCase("tons")) {
-            number = number * 1000000;
-        } else if (unit2.equalsIgnoreCase("kg") && unit1.equalsIgnoreCase("tons")) {
-            number = number * 1000;
-        } else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("mg")) {
-            number = number / 1000000000;
-        } else if (unit2.equalsIgnoreCase("tons") && unit1.equalsIgnoreCase("g")) {
-            number = number / 1000000;
-        } else if (unit2.equalsIgnoreCase("tons ") && unit1.equalsIgnoreCase("kg")) {
-            number = number / 1000;
-        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("m")) {
-            number = number / 1000;
-        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("cm")) {
-            number = number / 100000;
-        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("mm")) {
-            number = number / 1000000;
-        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("mm")) {
-            number = number / 1000;
-        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("cm")) {
-            number = number / 100;
-        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("km")) {
-            number = number * 1000;
-        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("mm")) {
-            number = number / 10;
-        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("m")) {
-            number = number * 100;
-        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("km")) {
-            number = number * 100000;
-        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("cm")) {
-            number = number * 10;
-        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("m")) {
-            number = number * 1000;
-        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("km")) {
-            number = number * 1000000;
-        } else if (unit2.equalsIgnoreCase("mm") && unit1.equalsIgnoreCase("dm")) {
-            number = number * 100;
-        } else if (unit2.equalsIgnoreCase("cm") && unit1.equalsIgnoreCase("dm")) {
-            number = number * 10;
-        } else if (unit2.equalsIgnoreCase("m") && unit1.equalsIgnoreCase("dm")) {
-            number = number / 10;
-        } else if (unit2.equalsIgnoreCase("km") && unit1.equalsIgnoreCase("dm")) {
-            number = number / 10000;
-        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("mm")) {
-            number = number / 100;
-        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("cm")) {
-            number = number / 10;
-        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("m")) {
-            number = number * 10;
-        } else if (unit2.equalsIgnoreCase("dm") && unit1.equalsIgnoreCase("km")) {
-            number = number * 10000;
-        }
-        //SAFEGUARD
-        else if (unit2.equalsIgnoreCase(unit1)) {
-            number = number;
-            System.out.println("You choose the same unit.");
-        }
-        //SAFEGUARD
-        else {
-            number = number;
-            System.out.println("ERROR");
-            System.out.println("Something went wrong, try again.");
+    }
+    public void basicOrSpecial() {
+        System.out.println("Do you want to create special units? Write yes or no.");
+        String yesOrNo = scanner.next();
+        if (yesOrNo.equalsIgnoreCase("yes")) {
             System.out.println("What number do you want to convert? Use a ',' as the decimal separator.");
             chooseNumber();
-            //What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
-            System.out.println("What unit do you want to choose? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");
+            System.out.println("What unit do you want to choose?");
             chooseUnit1();
-            //To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.
-            System.out.println("To which unit you want to convert? AVAILABLE UNITS: mg, g, kg, tons and mm, cm, dm, m, km.");
-            convertNumber();
-            if (number != number) {
-                System.out.println(getNumber() + " " + getUnit2());
-                System.out.println("You converted " + getUnit1() + " to " + getUnit2());
-            }
+            System.out.println("To which unit you want to convert?");
+            convertSpecialNumber();
+            System.out.println(getNumber() + " " + getUnit2());
+            System.out.println("You converted " + getUnit1() + " to " + getUnit2());
         }
+        else {
+            System.out.println("Ok, no problem :)");
+        }
+    }
+    public double convertNumber() {
+        unit2 = scanner.next();
+        String conversion = unit1 + "-" + unit2;
+        if (conversionMap.containsKey(conversion)) {
+            double factor = conversionMap.get(conversion);
+            number = number * factor;
+        } else {
+            //nie ma takiej jednostki
+            System.out.println("ERROR");
+        }
+        return number;
+    }
+    public double convertSpecialNumber() {
+        unit2 = scanner.next();
+        System.out.println("Enter the conversion factor");
+        specialFactor = scanner.nextInt();
+        number = number * specialFactor;
         return number;
     }
 }
