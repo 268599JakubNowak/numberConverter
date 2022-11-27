@@ -76,8 +76,12 @@ public class Converter {
             System.out.println(getNumber() + " " + getUnit2());
             System.out.println("You converted " + getUnit1() + " to " + getUnit2());
         }
-        else {
+        else if (yesOrNo.equalsIgnoreCase("no")) {
             System.out.println("Ok, no problem :)");
+        }
+        else {
+            System.out.println("I don't understand, write again.");
+            basicOrSpecial();
         }
     }
     public double convertNumber() {
