@@ -77,7 +77,14 @@ public class Converter {
             System.out.println("You converted " + getUnit1() + " to " + getUnit2());
         }
         else if (yesOrNo.equalsIgnoreCase("no")) {
-            System.out.println("Ok, no problem :)");
+            System.out.println("What number do you want to convert? Use a ',' as the decimal separator.");
+            chooseNumber();
+            System.out.println("What unit do you want to choose?");
+            chooseUnit1();
+            System.out.println("To which unit you want to convert?");
+            convertNumber();
+            System.out.println(getNumber() + " " + getUnit2());
+            System.out.println("You converted " + getUnit1() + " to " + getUnit2());
         }
         else {
             System.out.println("I don't understand, write again.");
